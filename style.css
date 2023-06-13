@@ -3,6 +3,24 @@
   padding: 0;
   box-size: border-box;
 }
+:root {
+  --cor-texto: white;
+  --bg-url: url(./assets/bg-mobile-dark.jpg);
+  --cor-borda: rgba(255, 255, 255, 0.5);
+  --cor-superfice: rgba(255, 255, 255, 0.05);
+  --cor-superfice-hover: rgba(0, 0, 0, 0.02);
+  --cor-fundo-icone: rgba(255, 255, 255, 0.2);
+}
+
+.ligth {
+  --cor-texto: #000000;
+  --bg-url: url(./assets/bg-mobile-light.jpg);
+  --cor-borda: rgba(0, 0, 0, 0.5);
+  --cor-superfice: rgba(0, 0, 0, 0.05);
+  --cor-superfice-hover: rgba(0, 0, 0, 0.02);
+  --cor-fundo-icone: rgba(0, 0, 0, 0.1);
+}
+
 body {
   /*background-image: url(./assets/bg-mobile-dark.jpg);
   background-repeat: no-repeat;
@@ -10,17 +28,17 @@ body {
   background-size: cover;
   */
   /*background: color image repeat position/size*/
-  background: url(./assets/bg-mobile-dark.jpg) no-repeat top center/cover;
+  background: var(--bg-url) no-repeat top center/cover;
 }
 body * {
   font-family: "Inter", sans-serif;
-  color: #ffffff;
+  color: var(--cor-branca);
 }
 
 #conteiner {
   width: 360px;
   margin: 56px auto 0px;
- 
+  padding: 0 24px;
 }
 #perfil {
   text-align: center;
@@ -32,5 +50,60 @@ body * {
 #perfil p {
   font-weight: 500;
   line-height: 24px;
-margin-top: 8px;
+  margin-top: 8px;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 0px;
+}
+ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 16px 24px;
+
+  background: var(--cor-superfice);
+  border: 1px solid var(--cor-borda);
+  border-radius: 8px;
+  -webkit-backdrop-filter: blur (4px);
+
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+ul li a:hover {
+  background: var(--cor-superfice-hover);
+  border: 1.5px solid var(--cor-branca);
+}
+
+#rede-social {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+
+  padding: 24px 0px;
+  font-size: 24px;
+}
+#rede-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 0.3s;
+}
+#rede-social a:hover {
+  background: var(-cor-fundo-icone);
+  padding: 16px;
+}
+
+footer {
+  padding: 24px 0;
+  text-align: center;
+  font-size: 14px;
 }
