@@ -8,8 +8,8 @@
   --bg-url: url(./assets/bg-mobile-dark.jpg);
   --cor-borda: rgba(255, 255, 255, 0.5);
   --cor-superfice: rgba(255, 255, 255, 0.05);
-  --cor-superfice-hover: rgba(0, 0, 0, 0.02);
-  --cor-fundo-icone: rgba(255, 255, 255, 0.2);
+  --cor-superfice-hover: rgba(0, 0, 0, 0.4);
+  --cor-fundo-icone: rgba(255, 255, 255, 0.4);
   --img-icone: url(./assets/MoonStars.svg);
 }
 
@@ -18,7 +18,7 @@
   --bg-url: url(./assets/bg-mobile-light.jpg);
   --cor-borda: rgba(0, 0, 0, 0.5);
   --cor-superfice: rgba(0, 0, 0, 0.05);
-  --cor-superfice-hover: rgba(0, 0, 0, 0.02);
+  --cor-superfice-hover: rgba(0, 0, 0, 0.05);
   --cor-fundo-icone: rgba(0, 0, 0, 0.1);
   --img-icone: url(./assets/Sun.svg);
 }
@@ -31,6 +31,7 @@ body {
   */
   /*background: color image repeat position/size*/
   background: var(--bg-url) no-repeat top center/cover;
+  height: 100vh;
 }
 body * {
   font-family: "Inter", sans-serif;
@@ -38,7 +39,8 @@ body * {
 }
 
 #conteiner {
-  width: 360px;
+  width: 100%;
+  max-width: 588px;
   margin: 56px auto 0px;
   padding: 0 24px;
 }
@@ -74,19 +76,26 @@ body * {
   left: 0;
   z-index: 1;
   transform: translateY(-50%);
+  animation: slide-out 0.3s;
+
 }
 .ligth #switch button {
-  right: 0;
-  left: initial;
+  animation: slide-in 0.3s forwards; 
 }
+#switch button:hover{
+  outline: 8px solid var(--cor-superfice-hover)
+}
+
 #switch span {
   display: block;
   width: 64px;
   height: 24px;
   background: var(--cor-superfice);
   border: 1px solid var(--cor-borda);
+  backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border-radius: 9999px;
+
 }
 
 /*links*/
@@ -143,4 +152,29 @@ footer {
   padding: 24px 0;
   text-align: center;
   font-size: 14px;
+}
+/*media queries*/
+@media (min-width: 700px) {
+  :root {
+    --bg-url: url(./assets/bg-desktop-dark.jpg);
+  }
+  .ligth {
+   --bg-url: url(./assets/bg-desktop-light.jpg)
+}
+@keyframes slide-in {
+  from {
+    left: 0%;
+  }
+  to {
+    left: 60%;
+  }
+}
+
+@keyframes slide-out {
+  from {
+    left: 60%;
+  }
+  to {
+    left: 0%;
+  }
 }
