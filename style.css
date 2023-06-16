@@ -10,6 +10,7 @@
   --cor-superfice: rgba(255, 255, 255, 0.05);
   --cor-superfice-hover: rgba(0, 0, 0, 0.02);
   --cor-fundo-icone: rgba(255, 255, 255, 0.2);
+  --img-icone: url(./assets/MoonStars.svg);
 }
 
 .ligth {
@@ -19,6 +20,7 @@
   --cor-superfice: rgba(0, 0, 0, 0.05);
   --cor-superfice-hover: rgba(0, 0, 0, 0.02);
   --cor-fundo-icone: rgba(0, 0, 0, 0.1);
+  --img-icone: url(./assets/Sun.svg);
 }
 
 body {
@@ -32,7 +34,7 @@ body {
 }
 body * {
   font-family: "Inter", sans-serif;
-  color: var(--cor-branca);
+  color: var(--cor-texto);
 }
 
 #conteiner {
@@ -40,6 +42,7 @@ body * {
   margin: 56px auto 0px;
   padding: 0 24px;
 }
+/*perfil*/
 #perfil {
   text-align: center;
   padding: 24px;
@@ -53,6 +56,40 @@ body * {
   margin-top: 8px;
 }
 
+/*switch*/
+#switch {
+  position: relative;
+  width: 64px;
+  margin: 4px auto;
+}
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: white var(--img-icone) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  transform: translateY(-50%);
+}
+.ligth #switch button {
+  right: 0;
+  left: initial;
+}
+#switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--cor-superfice);
+  border: 1px solid var(--cor-borda);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
+/*links*/
 ul {
   list-style: none;
   display: flex;
