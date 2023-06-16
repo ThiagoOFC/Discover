@@ -1,5 +1,5 @@
 <h1 align="center"> Discover </h1>
-
+<p align="center">Programa exclusivo e gratuito, feito utilizando tecnologias WEB.<p>
 <p align="center">
   <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
